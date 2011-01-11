@@ -439,6 +439,10 @@ _EditorEvents = [
 
 - (void)_didChange
 {
+    // Prevent the did change from firing if the editor is not yet loaded
+    if (![self editor])
+        return;
+
     // When the text changes, the height of the content may change.
     [self _updateScrollbar];
 
@@ -512,6 +516,9 @@ _EditorEvents = [
 
 - (CPString)htmlValue
 {
+    if (![self editor])
+        return _html;
+
     return [self editor].innerHTML;
 }
 
