@@ -268,6 +268,7 @@ _EditorEvents = [
 
     suppressAutoFocus = YES;
     [self setFontNameForSelection:@"Arial"];
+    [self setFontSizeForSelection:14.0];
     suppressAutoFocus = NO;
 
     if (editor['WKTextView_Installed'] === undefined)
